@@ -51,5 +51,6 @@ test:
 production:
   <<: *default
   database: app_production
-  username: app
-  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  username: <%= ENV.fetch('DB_PORT') { Rails.application.credentials.db[:username] } %>
+  password: <%= ENV.fetch('DB_PORT') { Rails.application.credentials.db[:password] } %>
+  port: <%= ENV.fetch('DB_PORT') { Rails.application.credentials.db[:port] } %>

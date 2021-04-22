@@ -53,4 +53,5 @@ production:
   database: app_production
   username: <%= ENV.fetch('DB_PORT') { Rails.application.credentials.db[:username] } %>
   password: <%= ENV.fetch('DB_PORT') { Rails.application.credentials.db[:password] } %>
+  host: <%= ENV.fetch('DB_PORT') { Rails.application.credentials.db[:host] } %>
   port: <%= ENV.fetch('DB_PORT') { Rails.application.credentials.db[:port] } %>
